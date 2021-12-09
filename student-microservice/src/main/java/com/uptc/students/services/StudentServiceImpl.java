@@ -1,6 +1,6 @@
 package com.uptc.students.services;
 
-import com.edu.uptc.commonsmicroservices.services.CommonServiceImpl;
+import com.uptc.commonsmicroservices.services.CommonServiceImpl;
 import com.uptc.students.entity.Student;
 import com.uptc.students.repository.StudentRepository;
 

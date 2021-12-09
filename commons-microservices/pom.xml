@@ -8,7 +8,7 @@
 		<version>2.6.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.edu.uptc</groupId>
+	<groupId>com.uptc</groupId>
 	<artifactId>commons-microservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>

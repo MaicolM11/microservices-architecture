@@ -1,6 +1,6 @@
 package com.uptc.students.controller;
 
-import com.edu.uptc.commonsmicroservices.controllers.CommonController;
+import com.uptc.commonsmicroservices.controllers.CommonController;
 import com.uptc.students.entity.Student;
 import com.uptc.students.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
