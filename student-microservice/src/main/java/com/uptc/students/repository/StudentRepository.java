@@ -1,6 +1,6 @@
 package com.uptc.students.repository;
 
-import com.uptc.students.entity.Student;
+import com.uptc.students.entities.Student;
 
 import org.springframework.data.repository.CrudRepository;
 

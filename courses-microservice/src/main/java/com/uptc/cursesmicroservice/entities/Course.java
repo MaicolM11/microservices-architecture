@@ -1,4 +1,4 @@
-package com.uptc.cursesmicroservice.models.entity;
+package com.uptc.cursesmicroservice.entities;
 
 import java.util.Date;
 
@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 public class Course {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;

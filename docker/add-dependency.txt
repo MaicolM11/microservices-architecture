@@ -1,0 +1,6 @@
+mvn install: install-file \
+-Dfile=/home/maicol/Documentos/software2/microservices-architecture/commons-students/target/commons-students-0.0.1-SNAPSHOT.jar \
+-DgroupId=com.uptc \
+-DartifactId=commons-students \
+-Dversion=0.0.1-SNAPSHOT \
+-Dpackaging=jar

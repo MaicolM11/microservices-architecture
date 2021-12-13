@@ -1,15 +1,40 @@
-package com.uptc.students.entity;
+package com.uptc.students.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Student {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "students")
+public class Student implements Serializable {
      
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String lastName;
     private String email;
     private Date createAt;
     private Byte[] photo;
+
+    public Student() {
+
+    }
+
+    public Student(Long id, String name, String lastName, String email, Date createAt, Byte[] photo) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.createAt = createAt;
+        this.photo = photo;
+    }
+
 
     public Long getId() {
         return id;

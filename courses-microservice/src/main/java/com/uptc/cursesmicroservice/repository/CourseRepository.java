@@ -1,6 +1,6 @@
-package com.uptc.cursesmicroservice.models.repository;
+package com.uptc.cursesmicroservice.repository;
 
-import com.uptc.cursesmicroservice.models.entity.Course;
+import com.uptc.cursesmicroservice.entities.Course;
 
 import org.springframework.data.repository.CrudRepository;
 
