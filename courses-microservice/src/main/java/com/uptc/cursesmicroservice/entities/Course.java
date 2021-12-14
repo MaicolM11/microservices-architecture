@@ -15,10 +15,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import com.uptc.commons.students.entities.Student;
 
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "courses")

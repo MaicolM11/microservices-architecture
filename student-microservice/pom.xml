@@ -19,7 +19,7 @@
 	<dependencies>
 	
 		<dependency>
-			<groupId>com.uptc</groupId>
+			<groupId>com.uptc.commonmicroservices</groupId>
 			<artifactId>commons-microservices</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>		

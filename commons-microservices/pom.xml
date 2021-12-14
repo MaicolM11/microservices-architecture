@@ -7,7 +7,7 @@
 		<version>2.6.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.uptc</groupId>
+	<groupId>com.uptc.commonmicroservices</groupId>
 	<artifactId>commons-microservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -26,7 +26,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>6.0.0.Beta2</version>
 		</dependency>
+
 		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.2.3.Final</version>
+		</dependency>
+		<!-- <dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.2.3.Final</version>
@@ -35,8 +41,7 @@
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.0</version>
-		</dependency>
-
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
