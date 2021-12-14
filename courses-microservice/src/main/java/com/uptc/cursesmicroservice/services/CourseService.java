@@ -5,4 +5,5 @@ import com.uptc.cursesmicroservice.entities.Course;
 
 public interface CourseService extends CommonService<Course> {
 
+    public Course findCourseByStudentId(Long id);
 }

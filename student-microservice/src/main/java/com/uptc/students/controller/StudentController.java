@@ -1,14 +1,14 @@
 package com.uptc.students.controller;
 
-//import com.uptc.commons.students.entities.Student;
+import com.uptc.commons.students.entities.Student;
 import com.uptc.commonsmicroservices.controllers.CommonController;
-import com.uptc.students.models.Student;
 import com.uptc.students.services.StudentService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/students")
 public class StudentController extends CommonController<Student, StudentService> {
 
     @PutMapping("/{id}")
@@ -32,6 +31,11 @@ public class StudentController extends CommonController<Student, StudentService>
         studentDb.setEmail(student.getEmail());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(studentDb));
+    }
+
+    @GetMapping("/filter/{term}")
+    public ResponseEntity<?> filter(@PathVariable String term){
+        return ResponseEntity.ok(service.findByNameOrLastName(term));
     }
 
 }

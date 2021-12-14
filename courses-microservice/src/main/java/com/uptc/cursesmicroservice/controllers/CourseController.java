@@ -9,6 +9,7 @@ import com.uptc.cursesmicroservice.entities.Course;
 import com.uptc.cursesmicroservice.services.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/courses")
 public class CourseController extends CommonController<Course, CourseService> {
 
     @PutMapping("/{id}")
@@ -30,7 +30,7 @@ public class CourseController extends CommonController<Course, CourseService> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCourse));
     }
 
-    @PutMapping("/{id}assign-student")
+    @PutMapping("/{id}/assign-student")
     public ResponseEntity<?> assignStudents(@RequestBody List<Student> students, @PathVariable Long id) {
         Optional<Course> o = this.service.findById(id);
         if (!o.isPresent()) {
@@ -54,4 +54,10 @@ public class CourseController extends CommonController<Course, CourseService> {
         dbCourse.removeStudent(student);
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCourse));
     }
+
+    @GetMapping("/student/{id}")
+    public ResponseEntity<?> searchCourseOfStudentWithId(@PathVariable Long id){
+        return ResponseEntity.ok(service.findCourseByStudentId(id));
+    } 
+
 }
