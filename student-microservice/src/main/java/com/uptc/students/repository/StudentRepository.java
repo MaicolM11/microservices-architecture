@@ -1,11 +1,11 @@
 package com.uptc.students.repository;
 
 
-import com.uptc.commons.students.entities.Student;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import com.uptc.students.models.Student;
 
-@Repository
+//ort com.uptc.commons.students.entities.Student;
+import org.springframework.data.repository.CrudRepository;
+
 public interface StudentRepository extends CrudRepository<Student, Long>{
 
 }

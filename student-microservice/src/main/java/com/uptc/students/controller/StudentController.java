@@ -1,9 +1,10 @@
 package com.uptc.students.controller;
 
-import com.uptc.commons.students.entities.Student;
+//import com.uptc.commons.students.entities.Student;
 import com.uptc.commonsmicroservices.controllers.CommonController;
+import com.uptc.students.models.Student;
 import com.uptc.students.services.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +18,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/students")
 public class StudentController extends CommonController<Student, StudentService> {
-
-    @Autowired
-    private StudentService service;
 
     @PutMapping("/{id}")
     public ResponseEntity<?> edit(@RequestBody Student student, @PathVariable Long id) {

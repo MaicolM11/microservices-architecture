@@ -2,9 +2,6 @@ package com.uptc.commonsmicroservices.services;
 
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public interface CommonService <E> {
     public Iterable<E> findAll();
 
