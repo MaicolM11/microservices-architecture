@@ -1,7 +1,9 @@
 package com.uptc.cursesmicroservice.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.uptc.commons.students.entities.Student;
 import com.uptc.commonsmicroservices.controllers.CommonController;
 import com.uptc.cursesmicroservice.entities.Course;
 import com.uptc.cursesmicroservice.services.CourseService;
@@ -25,6 +27,31 @@ public class CourseController extends CommonController<Course, CourseService> {
         }
         Course dbCourse = o.get();
         dbCourse.setName(course.getName());
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCourse));
+    }
+
+    @PutMapping("/{id}assign-student")
+    public ResponseEntity<?> assignStudents(@RequestBody List<Student> students, @PathVariable Long id) {
+        Optional<Course> o = this.service.findById(id);
+        if (!o.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Course dbCourse = o.get();
+        students.forEach(a -> {
+            dbCourse.addStudent(a);
+        });
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCourse));
+    }
+
+    @PutMapping("/{id}/delete-student")
+    public ResponseEntity<?> deleteStudent(@RequestBody Student student, @PathVariable Long id) {
+        Optional<Course> o = this.service.findById(id);
+        if (!o.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+        Course dbCourse = o.get();
+        dbCourse.removeStudent(student);
         return ResponseEntity.status(HttpStatus.CREATED).body(this.service.save(dbCourse));
     }
 }
